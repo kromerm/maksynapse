@@ -1,0 +1,46 @@
+{
+	"name": "SourceDataset_wh3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Cat.json",
+				"container": "mycontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Animal": {
+					"type": "string"
+				},
+				"Colour": {
+					"type": "string"
+				},
+				"Age": {
+					"type": "string"
+				},
+				"Visits": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Reason": {
+								"type": "string"
+							},
+							"Date": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
