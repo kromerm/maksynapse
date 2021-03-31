@@ -1,0 +1,287 @@
+{
+	"name": "ADOWorkItemJson",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ClassificationADLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"WorkItemType": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(dataset().WorkItemType,'Data.json')",
+					"type": "Expression"
+				},
+				"folderPath": "raw",
+				"fileSystem": "wpawkspfs2"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"WorkItemId": {
+								"type": "integer"
+							},
+							"InProgressDate": {
+								"type": "string"
+							},
+							"CompletedDate": {
+								"type": "string"
+							},
+							"LeadTimeDays": {
+								"type": "number"
+							},
+							"CycleTimeDays": {
+								"type": "number"
+							},
+							"InProgressDateSK": {
+								"type": "integer"
+							},
+							"CompletedDateSK": {
+								"type": "integer"
+							},
+							"AnalyticsUpdatedDate": {
+								"type": "string"
+							},
+							"ProjectSK": {
+								"type": "string"
+							},
+							"WorkItemRevisionSK": {
+								"type": "integer"
+							},
+							"AreaSK": {
+								"type": "string"
+							},
+							"IterationSK": {
+								"type": "string"
+							},
+							"AssignedToUserSK": {
+								"type": "string"
+							},
+							"ChangedByUserSK": {
+								"type": "string"
+							},
+							"CreatedByUserSK": {
+								"type": "string"
+							},
+							"ActivatedByUserSK": {
+								"type": "string"
+							},
+							"ClosedByUserSK": {
+								"type": "string"
+							},
+							"ResolvedByUserSK": {
+								"type": "string"
+							},
+							"ActivatedDateSK": {
+								"type": "integer"
+							},
+							"ChangedDateSK": {
+								"type": "integer"
+							},
+							"ClosedDateSK": {
+								"type": "integer"
+							},
+							"CreatedDateSK": {
+								"type": "integer"
+							},
+							"ResolvedDateSK": {
+								"type": "integer"
+							},
+							"StateChangeDateSK": {
+								"type": "integer"
+							},
+							"Revision": {
+								"type": "integer"
+							},
+							"Watermark": {
+								"type": "integer"
+							},
+							"Title": {
+								"type": "string"
+							},
+							"WorkItemType": {
+								"type": "string"
+							},
+							"ChangedDate": {
+								"type": "string"
+							},
+							"CreatedDate": {
+								"type": "string"
+							},
+							"State": {
+								"type": "string"
+							},
+							"Reason": {
+								"type": "string"
+							},
+							"FoundIn": {
+								"type": "null"
+							},
+							"IntegrationBuild": {
+								"type": "null"
+							},
+							"ActivatedDate": {
+								"type": "string"
+							},
+							"Activity": {
+								"type": "null"
+							},
+							"BusinessValue": {
+								"type": "null"
+							},
+							"ClosedDate": {
+								"type": "string"
+							},
+							"Issue": {
+								"type": "null"
+							},
+							"Priority": {
+								"type": "integer"
+							},
+							"Rating": {
+								"type": "null"
+							},
+							"ResolvedDate": {
+								"type": "string"
+							},
+							"ResolvedReason": {
+								"type": "string"
+							},
+							"Risk": {
+								"type": "null"
+							},
+							"Severity": {
+								"type": "string"
+							},
+							"StackRank": {
+								"type": "null"
+							},
+							"TimeCriticality": {
+								"type": "null"
+							},
+							"ValueArea": {
+								"type": "string"
+							},
+							"CompletedWork": {
+								"type": "null"
+							},
+							"DueDate": {
+								"type": "null"
+							},
+							"Effort": {
+								"type": "null"
+							},
+							"FinishDate": {
+								"type": "null"
+							},
+							"OriginalEstimate": {
+								"type": "null"
+							},
+							"RemainingWork": {
+								"type": "null"
+							},
+							"StartDate": {
+								"type": "null"
+							},
+							"StoryPoints": {
+								"type": "null"
+							},
+							"TargetDate": {
+								"type": "null"
+							},
+							"ParentWorkItemId": {
+								"type": "integer"
+							},
+							"TagNames": {
+								"type": "null"
+							},
+							"StateCategory": {
+								"type": "string"
+							},
+							"AutomatedTestId": {
+								"type": "null"
+							},
+							"AutomatedTestName": {
+								"type": "null"
+							},
+							"AutomatedTestStorage": {
+								"type": "null"
+							},
+							"AutomatedTestType": {
+								"type": "null"
+							},
+							"AutomationStatus": {
+								"type": "null"
+							},
+							"StateChangeDate": {
+								"type": "string"
+							},
+							"Count": {
+								"type": "integer"
+							},
+							"CommentCount": {
+								"type": "integer"
+							},
+							"Microsoft_VSTS_CodeReview_AcceptedBySK": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_AcceptedDate": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_ClosedStatus": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_ClosedStatusCode": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_ClosingComment": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_Context": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_ContextCode": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_ContextOwner": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_CodeReview_ContextType": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_Common_ReviewedBySK": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_Common_StateCode": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_Feedback_ApplicationType": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_TCM_TestSuiteType": {
+								"type": "null"
+							},
+							"Microsoft_VSTS_TCM_TestSuiteTypeId": {
+								"type": "null"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

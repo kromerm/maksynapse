@@ -1,0 +1,480 @@
+{
+	"name": "WPADataFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SourceADLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderPath": {
+				"type": "string"
+			},
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().FolderPath",
+					"type": "Expression"
+				},
+				"fileSystem": "landing"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PersonId",
+				"type": "String"
+			},
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Emails_sent_to_50_or_more_recipients",
+				"type": "String"
+			},
+			{
+				"name": "Emails_sent_11_to_50_recipients",
+				"type": "String"
+			},
+			{
+				"name": "Emails_sent_6_to_10_recipients",
+				"type": "String"
+			},
+			{
+				"name": "Emails_sent_2_to_5_recipients",
+				"type": "String"
+			},
+			{
+				"name": "Emails_sent_1_recipient",
+				"type": "String"
+			},
+			{
+				"name": "All_hands_recurring_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Workshop_recurring_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Bloated_recurring_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Lengthy_recurring_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Status_update_recurring_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Decision_making_recurring_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "One_on_one_recurring_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Total_unscheduled_calls",
+				"type": "String"
+			},
+			{
+				"name": "Total_scheduled_calls",
+				"type": "String"
+			},
+			{
+				"name": "Working_hours_in_unscheduled_calls",
+				"type": "String"
+			},
+			{
+				"name": "Working_hours_in_scheduled_calls",
+				"type": "String"
+			},
+			{
+				"name": "After_hours_in_unscheduled_calls",
+				"type": "String"
+			},
+			{
+				"name": "After_hours_in_scheduled_calls",
+				"type": "String"
+			},
+			{
+				"name": "Unscheduled_Call_hours",
+				"type": "String"
+			},
+			{
+				"name": "Scheduled_Call_hours",
+				"type": "String"
+			},
+			{
+				"name": "Recurring_or_regular_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Status_update_review_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "All_hands_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Workshop_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Bloated_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Lengthy_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Status_update_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Decision_making_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "One_on_one_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_more_than_2_hours",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_1_to_2_hours",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_1_hour",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_31_to_59_min",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_30_min_or_less",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_for_19_or_more_attendees",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_for_9_to_18_attendees",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_for_3_to_8_attendees",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_for_2_attendees",
+				"type": "String"
+			},
+			{
+				"name": "Workweek_span",
+				"type": "String"
+			},
+			{
+				"name": "Working_hours_instant_messages",
+				"type": "String"
+			},
+			{
+				"name": "Working_hours_in_calls",
+				"type": "String"
+			},
+			{
+				"name": "Working_hours_email_hours",
+				"type": "String"
+			},
+			{
+				"name": "Working_hours_collaboration_hours",
+				"type": "String"
+			},
+			{
+				"name": "Total_focus_hours",
+				"type": "String"
+			},
+			{
+				"name": "Total_emails_sent_during_meeting",
+				"type": "String"
+			},
+			{
+				"name": "Total_calls",
+				"type": "String"
+			},
+			{
+				"name": "Time_in_self_organized_meetings",
+				"type": "String"
+			},
+			{
+				"name": "Redundant_meeting_hours__organizational_",
+				"type": "String"
+			},
+			{
+				"name": "Redundant_meeting_hours__lower_level_",
+				"type": "String"
+			},
+			{
+				"name": "Open_2_hour_blocks",
+				"type": "String"
+			},
+			{
+				"name": "Open_1_hour_block",
+				"type": "String"
+			},
+			{
+				"name": "Networking_outside_organization",
+				"type": "String"
+			},
+			{
+				"name": "Networking_outside_company",
+				"type": "String"
+			},
+			{
+				"name": "Multitasking_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Meetings_with_skip_level",
+				"type": "String"
+			},
+			{
+				"name": "Meetings_with_manager_1_on_1",
+				"type": "String"
+			},
+			{
+				"name": "Meetings_with_manager",
+				"type": "String"
+			},
+			{
+				"name": "Meetings",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_with_skip_level",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_with_manager_1_on_1",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_with_manager",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours_during_working_hours",
+				"type": "String"
+			},
+			{
+				"name": "Meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Manager_coaching_hours_1_on_1",
+				"type": "String"
+			},
+			{
+				"name": "Low_quality_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Internal_network_size",
+				"type": "String"
+			},
+			{
+				"name": "Instant_messages_sent",
+				"type": "String"
+			},
+			{
+				"name": "Instant_message_hours",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_meetings_organized",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_meeting_attendees",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_instant_messages_recipients",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_instant_messages_hours",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_email_recipients",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_email_hours",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_calls_organized",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_call_participants",
+				"type": "String"
+			},
+			{
+				"name": "Generated_workload_call_hours",
+				"type": "String"
+			},
+			{
+				"name": "External_network_size",
+				"type": "String"
+			},
+			{
+				"name": "Emails_sent",
+				"type": "String"
+			},
+			{
+				"name": "Email_hours",
+				"type": "String"
+			},
+			{
+				"name": "Conflicting_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "Collaboration_hours_external",
+				"type": "String"
+			},
+			{
+				"name": "Collaboration_hrs",
+				"type": "String"
+			},
+			{
+				"name": "Call_hours",
+				"type": "String"
+			},
+			{
+				"name": "After_hours_meeting_hours",
+				"type": "String"
+			},
+			{
+				"name": "After_hours_instant_messages",
+				"type": "String"
+			},
+			{
+				"name": "After_hours_in_calls",
+				"type": "String"
+			},
+			{
+				"name": "After_hours_email_hours",
+				"type": "String"
+			},
+			{
+				"name": "After_hours_collaboration_hours",
+				"type": "String"
+			},
+			{
+				"name": "Organization",
+				"type": "String"
+			},
+			{
+				"name": "LevelDesignation",
+				"type": "String"
+			},
+			{
+				"name": "Domain",
+				"type": "String"
+			},
+			{
+				"name": "FunctionType",
+				"type": "String"
+			},
+			{
+				"name": "Layer",
+				"type": "String"
+			},
+			{
+				"name": "Region",
+				"type": "String"
+			},
+			{
+				"name": "zId",
+				"type": "String"
+			},
+			{
+				"name": "HireDate",
+				"type": "String"
+			},
+			{
+				"name": "attainment",
+				"type": "String"
+			},
+			{
+				"name": "SupervisorIndicator",
+				"type": "String"
+			},
+			{
+				"name": "Number_of_directs",
+				"type": "String"
+			},
+			{
+				"name": "TimeZone",
+				"type": "String"
+			},
+			{
+				"name": "HourlyRate",
+				"type": "String"
+			},
+			{
+				"name": "IsInternal",
+				"type": "String"
+			},
+			{
+				"name": "IsActive",
+				"type": "String"
+			},
+			{
+				"name": "WorkingStartTimeSetInOutlook",
+				"type": "String"
+			},
+			{
+				"name": "WorkingEndTimeSetInOutlook",
+				"type": "String"
+			},
+			{
+				"name": "WorkingDaysSetInOutlook",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

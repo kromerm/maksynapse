@@ -1,0 +1,24 @@
+{
+	"name": "LoadADOWorkItems",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkToADO",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"WorkItem": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('WorkItems?&$filter=WorkItemType eq ','''',dataset().WorkItem,'''')",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

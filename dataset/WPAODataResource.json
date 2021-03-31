@@ -1,0 +1,16 @@
+{
+	"name": "WPAODataResource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WPADemoOData",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ODataResource",
+		"schema": [],
+		"typeProperties": {
+			"path": "Persons"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

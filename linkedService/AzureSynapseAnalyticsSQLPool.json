@@ -1,0 +1,15 @@
+{
+	"name": "AzureSynapseAnalyticsSQLPool",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=wpawkspsynws2.sql.azuresynapse.net;Initial Catalog=wpawkspsqpl2"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

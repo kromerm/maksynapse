@@ -1,0 +1,13 @@
+{
+	"name": "GetGItJsonData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkToGit",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

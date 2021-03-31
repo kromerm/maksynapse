@@ -1,0 +1,36 @@
+{
+	"name": "ActivityMasterData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalyticsSQLPool",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "ActivityId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ActivityName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ActivityDescription",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ActivityTypeId",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Activity"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

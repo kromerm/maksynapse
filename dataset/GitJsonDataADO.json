@@ -1,0 +1,87 @@
+{
+	"name": "GitJsonDataADO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ClassificationADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "GitData.json",
+				"folderPath": "raw",
+				"fileSystem": "wpawkspfs2"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"commitId": {
+								"type": "string"
+							},
+							"author": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"email": {
+										"type": "string"
+									},
+									"date": {
+										"type": "string"
+									}
+								}
+							},
+							"committer": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"email": {
+										"type": "string"
+									},
+									"date": {
+										"type": "string"
+									}
+								}
+							},
+							"comment": {
+								"type": "string"
+							},
+							"changeCounts": {
+								"type": "object",
+								"properties": {
+									"Add": {
+										"type": "integer"
+									},
+									"Edit": {
+										"type": "integer"
+									},
+									"Delete": {
+										"type": "integer"
+									}
+								}
+							},
+							"url": {
+								"type": "string"
+							},
+							"remoteUrl": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

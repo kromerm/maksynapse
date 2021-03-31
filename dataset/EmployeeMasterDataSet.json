@@ -1,0 +1,85 @@
+{
+	"name": "EmployeeMasterDataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalyticsSQLPool",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "EmployeeId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WPAEmployeeId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WPAEmployeeName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EmployeeHireDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Organization",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LevelDesignation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FunctionType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Layer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "IsInternal",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SupervisorIndicator",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Number_of_directs",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ADOUserSK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ADOUserId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ADOUserEmail",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ADOUserName",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Employee"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

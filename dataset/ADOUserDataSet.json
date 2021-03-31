@@ -1,0 +1,16 @@
+{
+	"name": "ADOUserDataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkToADO",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "Users?"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

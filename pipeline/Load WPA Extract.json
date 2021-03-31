@@ -1,0 +1,303 @@
+{
+	"name": "Load WPA Extract",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_lz_rw",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy_lz_archive",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "wpa_test",
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": "*.csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "WPADataFile",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderPath": "wpa_test",
+							"FileName": "wpa.csv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "WPADataFile_RZ",
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": "wpa.csv",
+							"FolderName": "raw/wpa"
+						}
+					}
+				]
+			},
+			{
+				"name": "Copy_rw_cz",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy_lz_rw",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": "*.csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "WPADataFile_RZ",
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": "wpa.csv",
+							"FolderName": "raw/wpa"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "WPADataFile_CZ",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderName": "classification/wpa",
+							"FileName": "wpa.csv"
+						}
+					}
+				]
+			},
+			{
+				"name": "wpa_load",
+				"type": "SqlPoolStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy_rw_cz",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"sqlPool": {
+					"referenceName": "wpawkspsqpl2",
+					"type": "SqlPoolReference"
+				},
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_msft_fwk_wpa_dataload]"
+				}
+			},
+			{
+				"name": "Copy_lz_archive",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "wpa_test",
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "WPADataFile",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderPath": "wpa_test",
+							"FileName": "wpa.csv"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "WPADataFile",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderPath": {
+								"value": "@concat('archive\\wpa\\',pipeline().TriggerTime)",
+								"type": "Expression"
+							},
+							"FileName": "wpa.csv"
+						}
+					}
+				]
+			},
+			{
+				"name": "Clear Landing files",
+				"type": "Delete",
+				"dependsOn": [
+					{
+						"activity": "wpa_load",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "WPADataFile",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderPath": "wpa",
+							"FileName": "*"
+						}
+					},
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "SinkADLS",
+							"type": "LinkedServiceReference"
+						},
+						"path": "wpawkspfs2/classification/logging"
+					},
+					"enableLogging": true,
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"wildcardFileName": "*",
+						"enablePartitionDiscovery": false
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "WPA Pipeline"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-03-30T17:25:52Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

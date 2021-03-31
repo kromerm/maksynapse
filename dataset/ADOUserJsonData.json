@@ -1,0 +1,54 @@
+{
+	"name": "ADOUserJsonData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ClassificationADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "UserData.json",
+				"folderPath": "raw",
+				"fileSystem": "wpawkspfs2"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"UserSK": {
+								"type": "string"
+							},
+							"UserId": {
+								"type": "string"
+							},
+							"UserName": {
+								"type": "string"
+							},
+							"UserEmail": {
+								"type": "string"
+							},
+							"AnalyticsUpdatedDate": {
+								"type": "string"
+							},
+							"GitHubUserId": {
+								"type": "null"
+							},
+							"UserType": {
+								"type": "null"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
