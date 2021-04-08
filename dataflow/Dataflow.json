@@ -1,0 +1,28 @@
+{
+	"name": "Dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Dataset",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSynapseAnalyticsTable1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"script": "source(output(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string,\n\t\tColumn_4 as string,\n\t\tColumn_5 as string,\n\t\tColumn_6 as string,\n\t\tColumn_7 as string,\n\t\tColumn_8 as string,\n\t\tColumn_9 as string,\n\t\tColumn_10 as string,\n\t\tColumn_11 as string,\n\t\tColumn_12 as string,\n\t\tColumn_13 as string,\n\t\tColumn_14 as string,\n\t\tColumn_15 as string,\n\t\tColumn_16 as string,\n\t\tColumn_17 as string,\n\t\tColumn_18 as string,\n\t\tColumn_19 as string,\n\t\tColumn_20 as string,\n\t\tColumn_21 as string,\n\t\tColumn_22 as string,\n\t\tColumn_23 as string,\n\t\tColumn_24 as string,\n\t\tColumn_25 as string,\n\t\tColumn_26 as string,\n\t\tColumn_27 as string,\n\t\tColumn_28 as string,\n\t\tColumn_29 as string,\n\t\tColumn_30 as string,\n\t\tColumn_31 as string,\n\t\tColumn_32 as string,\n\t\tColumn_33 as string,\n\t\tColumn_34 as string,\n\t\tColumn_35 as string,\n\t\tColumn_36 as string,\n\t\tColumn_37 as string,\n\t\tColumn_38 as string,\n\t\tColumn_39 as string,\n\t\tColumn_40 as string,\n\t\tColumn_41 as string,\n\t\tColumn_42 as string,\n\t\tColumn_43 as string,\n\t\tColumn_44 as string,\n\t\tColumn_45 as string,\n\t\tColumn_46 as string,\n\t\tColumn_47 as string,\n\t\tColumn_48 as string,\n\t\tColumn_49 as string,\n\t\tColumn_50 as string,\n\t\tColumn_51 as string,\n\t\tColumn_52 as string,\n\t\tColumn_53 as string,\n\t\tColumn_54 as string,\n\t\tColumn_55 as string,\n\t\tColumn_56 as string,\n\t\tColumn_57 as string,\n\t\tColumn_58 as string,\n\t\tColumn_59 as string,\n\t\tColumn_60 as string,\n\t\tColumn_61 as string,\n\t\tColumn_62 as string,\n\t\tColumn_63 as string,\n\t\tColumn_64 as string,\n\t\tColumn_65 as string,\n\t\tColumn_66 as string,\n\t\tColumn_67 as string,\n\t\tColumn_68 as string,\n\t\tColumn_69 as string,\n\t\tColumn_70 as string,\n\t\tColumn_71 as string,\n\t\tColumn_72 as string,\n\t\tColumn_73 as string,\n\t\tColumn_74 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tstaged: true,\n\tallowCopyCommand: true,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}
