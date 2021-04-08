@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sqlOnDemand--maksynnew21",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/1e42591f-1f0c-4c5a-b7f2-a268f6105ec5/resourceGroups/makwest/providers/Microsoft.Synapse/workspaces/maksynnew21",
+		"groupId": "sqlOnDemand",
+		"fqdns": [
+			"maksynnew21-ondemand.a8fc8339-e8e8-493e-a635-76cdfcb98966.sql.azuresynapse.net"
+		]
+	}
+}

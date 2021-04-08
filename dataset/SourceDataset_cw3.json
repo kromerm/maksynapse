@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_cw3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "SampleData/taxidata",
+				"container": "mycontainer"
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

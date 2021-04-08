@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [tipamount]\n,[avgdistance]\n FROM [dbo].[tips]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "trips",
+				"databaseName": "trips"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
