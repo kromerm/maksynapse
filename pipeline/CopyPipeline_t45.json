@@ -48,6 +48,7 @@
 						}
 					},
 					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
 					"validateDataConsistency": false
 				},
 				"inputs": [
