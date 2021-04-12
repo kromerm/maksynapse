@@ -1,5 +1,5 @@
 {
-	"name": "Pipeline 1",
+	"name": "Copy pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Dataflow",
+						"referenceName": "Taxi Dataflow",
 						"type": "DataFlowReference"
 					},
 					"staging": {
