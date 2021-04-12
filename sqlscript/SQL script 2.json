@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [medallion]\n,[hack_license]\n,[vendor_id]\n,[pickup_datetime]\n,[payment_type]\n,[fare_amount]\n,[surcharge]\n,[mta_tax]\n,[tip_amount]\n,[tolls_amount]\n,[total_amount]\n,[rate_code]\n,[store_and_fwd_flag]\n,[dropoff_datetime]\n,[passenger_count]\n,[trip_time_in_secs]\n,[trip_distance]\n,[pickup_longitude]\n,[pickup_latitude]\n,[dropoff_longitude]\n,[dropoff_latitude]\n FROM [dbo].[tripandfaredata]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "trips",
+				"databaseName": "trips"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
