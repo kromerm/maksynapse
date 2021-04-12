@@ -1,5 +1,5 @@
 {
-	"name": "Dataflow",
+	"name": "Taxi Dataflow",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
