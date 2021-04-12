@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_r7j",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "maksynnew21-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			}
+		}
+	}
+}
