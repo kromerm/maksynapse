@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "tripanalytics",
+						"referenceName": "taxiflow",
 						"type": "DataFlowReference"
 					},
 					"compute": {
