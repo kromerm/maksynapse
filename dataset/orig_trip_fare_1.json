@@ -1,5 +1,5 @@
 {
-	"name": "trip_fare_1",
+	"name": "orig_trip_fare_1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",

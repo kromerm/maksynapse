@@ -1,5 +1,5 @@
 {
-	"name": "trip_data_1",
+	"name": "orig_trip_data_1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
