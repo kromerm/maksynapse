@@ -1,18 +1,18 @@
 {
-	"name": "orig_trip_fare_1",
+	"name": "trip_fare_1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
+				"type": "AzureBlobFSLocation",
 				"fileName": "trip_fare_1.csv",
-				"folderPath": "SampleData/taxidata",
-				"container": "mycontainer"
+				"folderPath": "SampleData",
+				"fileSystem": "synapse"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
