@@ -1,0 +1,16 @@
+{
+	"name": "cosmosMovies",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDb3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {},
+		"typeProperties": {
+			"collectionName": "moviesdemo"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

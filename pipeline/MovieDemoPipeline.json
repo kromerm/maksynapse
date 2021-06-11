@@ -1,0 +1,36 @@
+{
+	"name": "MovieDemoPipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "ExecuteMovieDemoDataFlow",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "MovieDemo1",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"folder": {
+			"name": "Demos"
+		},
+		"annotations": [],
+		"lastPublishTime": "2019-12-06T09:37:06Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

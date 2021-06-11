@@ -1,0 +1,9 @@
+{
+	"name": "makadfv2",
+	"location": "EastUS",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dd04080a-7ba3-403e-9d50-2d754c6eb991",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

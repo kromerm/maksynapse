@@ -1,0 +1,16 @@
+{
+	"name": "cosmos_factsales",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDb1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {},
+		"typeProperties": {
+			"collectionName": "factsales"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

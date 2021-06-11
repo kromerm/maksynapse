@@ -1,0 +1,59 @@
+{
+	"name": "CopyPipeline_cce",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_cce",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "mycontainer/SampleData/customers.json"
+					},
+					{
+						"name": "Destination",
+						"value": "mycontainer/output/json/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": true
+					},
+					"sink": {
+						"type": "BlobSink"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"dataIntegrationUnits": 0
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_cce",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_cce",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Copy"
+		},
+		"annotations": [],
+		"lastPublishTime": "2019-12-06T09:37:04Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

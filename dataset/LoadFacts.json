@@ -1,0 +1,16 @@
+{
+	"name": "LoadFacts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "dbo.SalesFacts"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

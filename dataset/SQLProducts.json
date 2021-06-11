@@ -1,0 +1,52 @@
+{
+	"name": "SQLProducts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Demos"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "ProductID",
+				"type": "Int32"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "ProductNumber",
+				"type": "String"
+			},
+			{
+				"name": "Color",
+				"type": "String"
+			},
+			{
+				"name": "StandardCost",
+				"type": "Decimal"
+			},
+			{
+				"name": "ListPrice",
+				"type": "Decimal"
+			},
+			{
+				"name": "Size",
+				"type": "String"
+			},
+			{
+				"name": "Weight",
+				"type": "Decimal"
+			}
+		],
+		"typeProperties": {
+			"tableName": "salesprod"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,64 @@
+{
+	"name": "AppendFiles",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "sales1",
+						"type": "DatasetReference"
+					},
+					"name": "SalesOrig"
+				},
+				{
+					"dataset": {
+						"referenceName": "Sales3",
+						"type": "DatasetReference"
+					},
+					"name": "SalesNew"
+				},
+				{
+					"dataset": {
+						"referenceName": "SalesUpdate",
+						"type": "DatasetReference"
+					},
+					"name": "SalesUpdate"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "folderout",
+						"type": "DatasetReference"
+					},
+					"name": "UpdatedOutput"
+				}
+			],
+			"transformations": [
+				{
+					"name": "UnionNew"
+				},
+				{
+					"name": "UnionUpdate"
+				},
+				{
+					"name": "Distinct"
+				},
+				{
+					"name": "NotNull"
+				},
+				{
+					"name": "SurrogateKey"
+				},
+				{
+					"name": "ReJoinData"
+				},
+				{
+					"name": "OrigData"
+				}
+			],
+			"script": "source(output(\n\t\tID as string,\n\t\tTitle as string,\n\t\tCost as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> SalesOrig\nsource(output(\n\t\tID as string,\n\t\tTitle as string,\n\t\tCost as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> SalesNew\nsource(output(\n\t\tID as string,\n\t\tTitle as string,\n\t\tCost as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> SalesUpdate\nSalesOrig, SalesNew union(byName: true)~> UnionNew\nUnionNew, SalesUpdate union(byName: true)~> UnionUpdate\nSurrogateKey aggregate(groupBy(ID),\n\twinner = last(mykey)) ~> Distinct\nUnionUpdate filter(!isNull(Title)) ~> NotNull\nNotNull keyGenerate(output(mykey as long),\n\tstartAt: 1L) ~> SurrogateKey\nDistinct, OrigData join(winner == mykey,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> ReJoinData\nSurrogateKey select(mapColumn(\n\t\tID,\n\t\tTitle,\n\t\tCost,\n\t\tmykey\n\t),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> OrigData\nReJoinData sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['SalesUpdated.csv'],\n\ttruncate: true,\n\tmapColumn(\n\t\tID = OrigData@ID,\n\t\tTitle,\n\t\tCost\n\t),\n\tpartitionBy('hash', 1)) ~> UpdatedOutput"
+		}
+	}
+}

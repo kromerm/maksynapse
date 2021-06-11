@@ -1,0 +1,25 @@
+{
+	"name": "AzureDataLakeStorageFile2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlobFSFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"fileName": "employee2.csv",
+			"folderPath": "mycontainer/myfolder"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

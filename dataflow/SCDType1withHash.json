@@ -1,0 +1,51 @@
+{
+	"name": "SCDType1withHash",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SQLProducts_new",
+						"type": "DatasetReference"
+					},
+					"name": "SQLProductsOLTP"
+				},
+				{
+					"dataset": {
+						"referenceName": "prodfromsales3",
+						"type": "DatasetReference"
+					},
+					"name": "StagingSource1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SQLprodstaging",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "CreateHash"
+				},
+				{
+					"name": "Exists1"
+				},
+				{
+					"name": "SetAttributes"
+				},
+				{
+					"name": "Lookup1"
+				},
+				{
+					"name": "AlterRows"
+				}
+			],
+			"script": "source(output(\n\t\tProductID as integer,\n\t\tName as string,\n\t\tProductNumber as string,\n\t\tColor as string,\n\t\tStandardCost as decimal(19,4),\n\t\tListPrice as decimal(19,4),\n\t\tSize as string,\n\t\tWeight as decimal(8,2),\n\t\tProductCategoryID as integer,\n\t\tProductModelID as integer,\n\t\tSellStartDate as timestamp,\n\t\tSellEndDate as timestamp,\n\t\tDiscontinuedDate as timestamp,\n\t\tThumbnailPhotoFileName as string,\n\t\trowguid as string,\n\t\tModifiedDate as timestamp\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> SQLProductsOLTP\nsource(output(\n\t\tProductID as integer,\n\t\tName as string,\n\t\tProductNumber as string,\n\t\tColor as string,\n\t\tStandardCost as decimal(19,4),\n\t\tListPrice as decimal(19,4),\n\t\t{_Inserted} as timestamp,\n\t\t{_LastUpdated} as timestamp,\n\t\tDWhash as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> StagingSource1\nSQLProductsOLTP derive(DWhash = sha1(Name+ProductNumber+Color)) ~> CreateHash\nCreateHash, StagingSource1 exists(SQLProductsOLTP@Name == StagingSource1@Name || StagingSource1@Color == SQLProductsOLTP@Color,\n\tnegate:true,\n\tbroadcast: 'auto')~> Exists1\nLookup1 derive(Inserted = iif (isNull({_Inserted}),currentTimestamp(),{_Inserted}),\n\t\tUpdated = currentTimestamp()) ~> SetAttributes\nExists1, StagingSource1 lookup(SQLProductsOLTP@ProductID == StagingSource1@ProductID,\n\tmultiple: true,\n\tbroadcast: 'auto')~> Lookup1\nSetAttributes alterRow(upsertIf(true())) ~> AlterRows\nAlterRows sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tProductID as integer,\n\t\tName as string,\n\t\tProductNumber as string,\n\t\tColor as string,\n\t\tStandardCost as decimal(19,4),\n\t\tListPrice as decimal(19,4),\n\t\t{_Inserted} as timestamp,\n\t\t{_LastUpdated} as timestamp,\n\t\tDWhash as string\n\t),\n\tdeletable:false,\n\tinsertable:false,\n\tupdateable:false,\n\tupsertable:true,\n\tkeys:['SQLProductsOLTP@ProductID'],\n\tformat: 'table',\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tProductID = SQLProductsOLTP@ProductID,\n\t\tName = SQLProductsOLTP@Name,\n\t\tProductNumber = SQLProductsOLTP@ProductNumber,\n\t\tColor = SQLProductsOLTP@Color,\n\t\tStandardCost = SQLProductsOLTP@StandardCost,\n\t\tListPrice = SQLProductsOLTP@ListPrice,\n\t\t{_Inserted} = Inserted,\n\t\t{_LastUpdated} = Updated,\n\t\tDWhash = CreateHash@DWhash\n\t),\n\tpartitionBy('roundRobin', 4)) ~> sink1"
+		}
+	}
+}

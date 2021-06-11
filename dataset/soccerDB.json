@@ -1,0 +1,16 @@
+{
+	"name": "soccerDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "dbo.soccerDB"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

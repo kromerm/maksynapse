@@ -1,0 +1,16 @@
+{
+	"name": "FactTable21",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "dbo.FactTable2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
