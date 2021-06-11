@@ -2,15 +2,18 @@
 	"name": "AzureSynapseAnalyticsTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSynapseAnalytics1",
-			"type": "LinkedServiceReference"
+			"referenceName": "maksynapsega-WorkspaceDefaultSqlServer",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DBName": "marksqlpool"
+			}
 		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "myloans1"
+			"table": "taxidemo1"
 		}
 	}
 }
