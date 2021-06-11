@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [medallion]\n,[hack_license]\n,[vendor_id]\n,[rate_code]\n,[store_and_fwd_flag]\n,[pickup_datetime]\n,[dropoff_datetime]\n,[passenger_count]\n,[trip_time_in_secs]\n,[trip_distance]\n,[pickup_longitude]\n,[pickup_latitude]\n,[dropoff_longitude]\n,[dropoff_latitude]\n,[rate_code_enum]\n FROM [dbo].[taxidemo1]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "marksqlpool",
+				"databaseName": "marksqlpool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
