@@ -8,8 +8,23 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
+		},
 		"maksynapsega-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://maksynapsega.dfs.core.windows.net"
 		},
 		"maksynapsega-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://maksynapsega.dfs.core.windows.net"
