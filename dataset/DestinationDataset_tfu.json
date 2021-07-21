@@ -1,0 +1,15 @@
+{
+	"name": "DestinationDataset_tfu",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"typeProperties": {
+			"table": "demo1"
+		},
+		"sqlPool": {
+			"referenceName": "marksqlpool",
+			"type": "SqlPoolReference"
+		}
+	}
+}
