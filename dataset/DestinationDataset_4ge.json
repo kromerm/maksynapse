@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_4ge",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbi",
+			"table": "demo1"
+		},
+		"sqlPool": {
+			"referenceName": "marksqlpool",
+			"type": "SqlPoolReference"
+		}
+	}
+}
