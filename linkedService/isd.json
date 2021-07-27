@@ -1,0 +1,10 @@
+{
+	"name": "isd",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"sasUri": "https://azureopendatastorage.blob.core.windows.net/isdweatherdatacontainer/ISDWeather/?\"\""
+		}
+	}
+}
