@@ -1,0 +1,23 @@
+{
+	"name": "Database 1",
+	"properties": {
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Retail\",\"Version\":\"0.1.0\"}}}"
+		},
+		"Name": "Database 1",
+		"EntityType": "DATABASE",
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://synapse@maksynapsega.dfs.core.windows.net/Database 1",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "maksynapsega-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

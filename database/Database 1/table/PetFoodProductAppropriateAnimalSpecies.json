@@ -1,0 +1,286 @@
+{
+	"name": "PetFoodProductAppropriateAnimalSpecies",
+	"properties": {
+		"Namespace": {
+			"DatabaseName": "Database 1"
+		},
+		"Name": "PetFoodProductAppropriateAnimalSpecies",
+		"Description": "The appropriate usage or application of the pet food product based on animal species, age and weight.",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a product.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SpeciesId",
+					"Description": "The unique identifier of a species.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "SpeciesId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumAgeYears",
+					"Description": "The animal minimum age in years.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "MinimumAgeYears"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumAgeYears",
+					"Description": "The animal maximum age in years.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "MaximumAgeYears"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumWeightUnits",
+					"Description": "The animal minimum weight units.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "MinimumWeightUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumWeightUnits",
+					"Description": "The animal maximum weight units.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "MaximumWeightUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfRecommendedDailyFeedings",
+					"Description": "The number of recommended daily feedings based on animal species, age and weight.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "NumberOfRecommendedDailyFeedings"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RecommendedDailyFeedingUnits",
+					"Description": "The recommended total daily feedings units based on animal species, age and weight.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "RecommendedDailyFeedingUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumDailyFeedingUnits",
+					"Description": "The number of recommended minimum daily feedings based on animal species, age and weight.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "MinimumDailyFeedingUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaximumDailyFeedingUnits",
+					"Description": "The number of recommended maximum daily feedings based on animal species, age and weight.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "MaximumDailyFeedingUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FeedingUnitsUom",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "FeedingUnitsUom"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AnimalLifeStageId",
+					"Description": "The unique identifier of a animal life-stage.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "AnimalLifeStageId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FreeFeedingRecommendedIndicator",
+					"Description": "A popular alternative to strict feeding times is free feeding. This is when food is left in the bowl and the dog is allowed to choose when and how much to eat.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "FreeFeedingRecommendedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PetFoodProductAppropriateAnimalSpeciesNote",
+					"Description": "A note, comment or additional information regarding the pet food product appropriate animal species.",
+					"BaseAttributeReference": {
+						"Entity": "PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies",
+						"Name": "PetFoodProductAppropriateAnimalSpeciesNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://synapse@maksynapsega.dfs.core.windows.net/Database 1/PetFoodProductAppropriateAnimalSpecies",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://synapse@maksynapsega.dfs.core.windows.net/Database 1/PetFoodProductAppropriateAnimalSpecies",
+				"Properties": {
+					"LinkedServiceName": "maksynapsega-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"ProductId\"},\"SpeciesId\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"SpeciesId\"},\"MinimumAgeYears\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MinimumAgeYears\"},\"MaximumAgeYears\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MaximumAgeYears\"},\"MinimumWeightUnits\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MinimumWeightUnits\"},\"MaximumWeightUnits\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MaximumWeightUnits\"},\"NumberOfRecommendedDailyFeedings\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"NumberOfRecommendedDailyFeedings\"},\"RecommendedDailyFeedingUnits\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"RecommendedDailyFeedingUnits\"},\"MinimumDailyFeedingUnits\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MinimumDailyFeedingUnits\"},\"MaximumDailyFeedingUnits\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MaximumDailyFeedingUnits\"},\"FeedingUnitsUom\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"FeedingUnitsUom\"},\"AnimalLifeStageId\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"AnimalLifeStageId\"},\"FreeFeedingRecommendedIndicator\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"FreeFeedingRecommendedIndicator\"},\"PetFoodProductAppropriateAnimalSpeciesNote\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"PetFoodProductAppropriateAnimalSpeciesNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PetFoodProductAppropriateAnimalSpecies\",\"path\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\"},\"description\":\"The appropriate usage or application of the pet food product based on animal species, age and weight.\",\"primaryKey\":[\"ProductId\",\"SpeciesId\",\"MinimumAgeYears\",\"MaximumAgeYears\",\"MinimumWeightUnits\",\"MaximumWeightUnits\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"name\":\"ProductId\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"ProductId\"},\"dataType\":\"long\"},{\"type\":\"Existing\",\"name\":\"SpeciesId\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"SpeciesId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumAgeYears\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MinimumAgeYears\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumAgeYears\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MaximumAgeYears\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumWeightUnits\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MinimumWeightUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumWeightUnits\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MaximumWeightUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"NumberOfRecommendedDailyFeedings\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"NumberOfRecommendedDailyFeedings\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"RecommendedDailyFeedingUnits\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"RecommendedDailyFeedingUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MinimumDailyFeedingUnits\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MinimumDailyFeedingUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"MaximumDailyFeedingUnits\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"MaximumDailyFeedingUnits\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FeedingUnitsUom\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"FeedingUnitsUom\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"AnimalLifeStageId\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"AnimalLifeStageId\"},\"dataType\":\"integer\"},{\"type\":\"Existing\",\"name\":\"FreeFeedingRecommendedIndicator\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"FreeFeedingRecommendedIndicator\"},\"dataType\":\"boolean\"},{\"type\":\"Existing\",\"name\":\"PetFoodProductAppropriateAnimalSpeciesNote\",\"attributeReference\":{\"entity\":\"PetFoodProductAppropriateAnimalSpecies.cdm.json/PetFoodProductAppropriateAnimalSpecies\",\"name\":\"PetFoodProductAppropriateAnimalSpeciesNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024}]}}}",
+			"Description": "The appropriate usage or application of the pet food product based on animal species, age and weight.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "ProductId,SpeciesId,MinimumAgeYears,MaximumAgeYears,MinimumWeightUnits,MaximumWeightUnits",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
