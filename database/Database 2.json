@@ -1,6 +1,8 @@
 {
 	"name": "Database 2",
 	"properties": {
+		"Name": "Database 2",
+		"EntityType": "DATABASE",
 		"Origin": {
 			"Type": "SPARK"
 		},
@@ -8,8 +10,6 @@
 			"IsSyMSCDMDatabase": true,
 			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Retail\",\"Version\":\"0.1.0\"}}}"
 		},
-		"Name": "Database 2",
-		"EntityType": "DATABASE",
 		"Source": {
 			"Provider": "ADLS",
 			"Location": "abfss://synapse@maksynapsega.dfs.core.windows.net/Database 2",
