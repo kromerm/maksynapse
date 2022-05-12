@@ -4,7 +4,7 @@
 		"type": "Managed",
 		"typeProperties": {
 			"computeProperties": {
-				"location": "AutoResolve",
+				"location": "West US",
 				"dataFlowProperties": {
 					"computeType": "MemoryOptimized",
 					"coreCount": 80,
